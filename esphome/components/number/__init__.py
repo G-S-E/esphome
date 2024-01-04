@@ -28,6 +28,7 @@ from esphome.const import (
     DEVICE_CLASS_DATA_RATE,
     DEVICE_CLASS_DATA_SIZE,
     DEVICE_CLASS_DISTANCE,
+    DEVICE_CLASS_DURATION,
     DEVICE_CLASS_EMPTY,
     DEVICE_CLASS_ENERGY,
     DEVICE_CLASS_ENERGY_STORAGE,
@@ -42,6 +43,7 @@ from esphome.const import (
     DEVICE_CLASS_NITROGEN_MONOXIDE,
     DEVICE_CLASS_NITROUS_OXIDE,
     DEVICE_CLASS_OZONE,
+    DEVICE_CLASS_PH,
     DEVICE_CLASS_PM1,
     DEVICE_CLASS_PM10,
     DEVICE_CLASS_PM25,
@@ -81,6 +83,7 @@ DEVICE_CLASSES = [
     DEVICE_CLASS_DATA_RATE,
     DEVICE_CLASS_DATA_SIZE,
     DEVICE_CLASS_DISTANCE,
+    DEVICE_CLASS_DURATION,
     DEVICE_CLASS_EMPTY,
     DEVICE_CLASS_ENERGY,
     DEVICE_CLASS_ENERGY_STORAGE,
@@ -95,6 +98,7 @@ DEVICE_CLASSES = [
     DEVICE_CLASS_NITROGEN_MONOXIDE,
     DEVICE_CLASS_NITROUS_OXIDE,
     DEVICE_CLASS_OZONE,
+    DEVICE_CLASS_PH,
     DEVICE_CLASS_PM1,
     DEVICE_CLASS_PM10,
     DEVICE_CLASS_PM25,
@@ -253,8 +257,8 @@ async def register_number(
     )
 
 
-async def new_number(config, *, min_value: float, max_value: float, step: float):
-    var = cg.new_Pvariable(config[CONF_ID])
+async def new_number(config, *args, min_value: float, max_value: float, step: float):
+    var = cg.new_Pvariable(config[CONF_ID], *args)
     await register_number(
         var, config, min_value=min_value, max_value=max_value, step=step
     )
