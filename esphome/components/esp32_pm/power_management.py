@@ -1,8 +1,12 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
-from esphome.const import CONF_ID, CONF_MIN_FREQ_MHZ, CONF_MAX_FREQ_MHZ, CONF_TICKLESS
+from esphome.const import CONF_ID
 from esphome.components.esp32 import add_idf_sdkconfig_option
 from esphome.core import CORE
+
+CONF_MAX_FREQ_MHZ = "max_freq_mhz"
+CONF_MIN_FREQ_MHZ = "min_freq_mhz"
+CONF_TICKLESS = "tickless"
 
 DEPENDENCIES = ["esp32"]
 
