@@ -99,6 +99,8 @@ bool WiFiComponent::wifi_apply_power_save_() {
       break;
   }
   wifi_fpm_auto_sleep_set_in_null_mode(1);
+  wifi_set_sleep_level(MAX_SLEEP_T);
+  wifi_set_listen_interval(5);
   return wifi_set_sleep_type(power_save);
 }
 

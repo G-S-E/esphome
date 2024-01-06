@@ -3,7 +3,7 @@
 #include "esphome/core/component.h"
 #include "esphome/components/power_management/power_management.h"
 
-#include <memory>
+#include <memory> 
 
 #ifdef USE_ESP_IDF
 #include "esp_pm.h"

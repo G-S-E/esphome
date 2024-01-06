@@ -1,6 +1,7 @@
 #include "esphome/core/hal.h"
 #include "esphome/core/application.h"
 #include "esphome/core/log.h"
+
 #ifdef USE_ESP_IDF
 #include "esp_err.h"
 #include "esp_pm.h"

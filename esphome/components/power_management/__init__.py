@@ -1,6 +1,6 @@
 import esphome.codegen as cg
 
-CODEOWNERS = ["@silverchris"]
+CODEOWNERS = ["@silverchris", "@G-S-E"]
 IS_PLATFORM_COMPONENT = True
 
 
