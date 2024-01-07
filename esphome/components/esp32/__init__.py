@@ -145,7 +145,8 @@ def add_idf_sdkconfig_option(name: str, value: SdkconfigValueType):
     """Set an esp-idf sdkconfig value."""
     if not CORE.using_esp_idf:
         raise ValueError("Not an esp-idf project")
-    CORE.data[KEY_ESP32][KEY_SDKCONFIG_OPTIONS][name] = value
+
+    CORE.data[CORE.target_platform][KEY_SDKCONFIG_OPTIONS][name] = value
 
 
 def add_idf_component(

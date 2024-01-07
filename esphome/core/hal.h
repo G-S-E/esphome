@@ -3,8 +3,13 @@
 #include <cstdint>
 #include "gpio.h"
 
-#if defined(USE_ESP32_FRAMEWORK_ESP_IDF)
+#if (defined(USE_ESP32_FRAMEWORK_ESP_IDF) || defined(USE_ESP8266_FRAMEWORK_ESP_IDF))
 #include <esp_attr.h>
+#if defined(USE_ESP8266)
+#include <c_types.h>
+#ifndef PROGMEM
+#define PROGMEM ICACHE_RODATA_ATTR
+#else
 #ifndef PROGMEM
 #define PROGMEM
 #endif
@@ -17,7 +22,7 @@
 #define PROGMEM
 #endif
 
-#elif defined(USE_ESP8266)
+#elif defined(USE_ESP8266_FRAMEWORK_ARDUINO)
 
 #include <c_types.h>
 #ifndef PROGMEM

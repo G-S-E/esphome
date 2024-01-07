@@ -417,7 +417,7 @@ async def to_code(config):
 
     cg.add(var.set_enable_on_boot(config[CONF_ENABLE_ON_BOOT]))
 
-    if CORE.is_esp8266:
+    if CORE.is_esp8266 and CORE.using_arduino:
         cg.add_library("ESP8266WiFi", None)
     elif CORE.is_esp32 and CORE.using_arduino:
         cg.add_library("WiFi", None)

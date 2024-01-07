@@ -7,7 +7,9 @@
 #ifdef USE_SOCKET_IMPL_LWIP_TCP
 
 #define LWIP_INTERNAL
+#ifdef USE_ARDUINO
 #include "lwip/inet.h"
+#endif
 #include <cerrno>
 #include <cstdint>
 #include <sys/types.h>

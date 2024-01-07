@@ -1,0 +1,52 @@
+substitutions:
+  upper_device_name: D1 mini test board
+  device_name: d1-mini-esp8266-idf-test
+  device_id: d1_mini_esp8266_idf_test
+  device_description: D1 mini esp8266-idf test 
+
+esphome:
+  name: ${device_name}
+  comment: ${device_description}
+  # libraries:
+  #   - ESP8266WiFi
+  # platformio_options: 
+  #   framework: "esp8266-rtos-sdk"
+  #   lib_deps:
+  #     - "Arduino/libraries/ESP8266WiFi @ ^1.0"
+  #   board_build.ldscript: "test.ld"
+  #   board_build.extra_flags: 
+  #     - "-DESP8266"
+  #     - "-DLOG_LEVEL=0"
+  #     - "-UBOOTLOADER_LOG_LEVEL_INFO" 
+  #     - "-UBOOTLOADER_LOG_LEVEL_ERROR" 
+  #     - "-UBOOTLOADER_LOG_LEVEL_WARN" 
+  #     - "-DBOOTLOADER_LOG_LEVEL_NONE"
+  #     - "-DBOOTLOADER_LOG_LEVEL=0"
+#   on_boot: 
+#   - priority: -250.0
+#     then:
+#       - fan.turn_off: fan_01        
+#       - light.turn_off: light_01
+
+esp8266:
+  board: d1_mini
+  framework:
+    type: esp8266-rtos-sdk
+    version: recommended 
+    sdkconfig_options:
+      COMPILER_OPTIMIZATION_SIZE: y
+
+logger: 
+  level: VERY_VERBOSE 
+
+api:
+  encryption:
+    key: "asLWmP3pPh44HZzwQ3s986adl1NjX1dwrf1w56GmUzQ="
+
+ota:
+  password: "71c55c8886b86974cfd2380a808c9ce9"
+
+wifi:
+  ssid: "Vodafone-780220"
+  password: "3DqHLpfSRDAKPmGM"
+    

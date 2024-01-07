@@ -5,8 +5,10 @@
 #include <string>
 
 #ifdef USE_STORE_LOG_STR_IN_FLASH
+#ifdef USE_ARDUINO
 #include "WString.h"
 #include "esphome/core/defines.h"  // for USE_ARDUINO_VERSION_CODE
+#endif
 #endif
 
 // Include ESP-IDF/Arduino based logging methods here so they don't undefine ours later
